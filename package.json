@@ -1,0 +1,28 @@
+{
+  "name": "geojson-summary",
+  "version": "0.0.0",
+  "description": "return a text summary of what is in a geojson object",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/geojson-summary.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mapbox/geojson-summary.git"
+  },
+  "keywords": [
+    "geojson",
+    "summary",
+    "text",
+    "description"
+  ],
+  "author": "Tom MacWright",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/mapbox/geojson-summary/issues"
+  },
+  "homepage": "https://github.com/mapbox/geojson-summary",
+  "devDependencies": {
+    "tap": "~0.4.8"
+  }
+}
