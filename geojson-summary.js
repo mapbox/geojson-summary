@@ -15,7 +15,8 @@ module.exports = function(gj) {
     };
 
     for (var i = 0; i < features.length; i++) {
-        if (typeof counts[features[i].geometry.type] == 'number') {
+        if (features[i].geometry && features[i].geometry.type &&
+            typeof counts[features[i].geometry.type] == 'number') {
             counts[features[i].geometry.type]++;
         }
     }

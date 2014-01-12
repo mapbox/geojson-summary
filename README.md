@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mapbox/geojson-summary.png)](https://travis-ci.org/mapbox/geojson-summary)
+
 # geojson-summary
 
 Generate a plain-english summary of what is in a GeoJSON file.
