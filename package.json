@@ -24,5 +24,8 @@
   "homepage": "https://github.com/mapbox/geojson-summary",
   "devDependencies": {
     "tap": "~0.4.8"
+  },
+  "dependencies": {
+    "tape": "~2.3.2"
   }
 }

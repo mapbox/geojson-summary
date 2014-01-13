@@ -1,7 +1,8 @@
-module.exports = function(gj) {
+module.exports = function(gj, options) {
     var features = gj.features || gj;
+    options = options || {};
 
-    var types = {
+    var types = options.types || {
         Point: [' point', ' points'],
         Polygon: [' polygon', ' polygons'],
         LineString: [' line', ' lines']

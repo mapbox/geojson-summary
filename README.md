@@ -8,6 +8,25 @@ Generate a plain-english summary of what is in a GeoJSON file.
 
     npm install geojson-summary
 
+## api
+
+### `summary(geojson, options)`
+
+Given a GeoJSON object, return an object with `sentence` (string) and
+`parts` (array of strings) members describing the object.
+
+Options:
+
+* `types`: an object of type to name mappings like the default:
+
+```js
+{
+    Point: [' point', ' points'],
+    Polygon: [' polygon', ' polygons'],
+    LineString: [' line', ' lines']
+}
+```
+
 ## example
 
 ```js

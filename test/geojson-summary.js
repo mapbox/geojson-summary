@@ -1,4 +1,4 @@
-var test = require('tap').test,
+var test = require('tape').test,
     summary = require('../');
 
 test('basic geojson', function(t) {
@@ -14,6 +14,21 @@ test('basic geojson', function(t) {
     }]), {
         sentence: '1 polygon',
         parts: ['1 polygon']
+    });
+
+    t.deepEqual(summary([{
+        type: 'Feature',
+        properties: {},
+        geometry: { "type": "Point",
+          "coordinates": [100.0, 0.0]
+        }
+    }], {
+        types: {
+            Point: [' marker', ' markers']
+        }
+    }), {
+        sentence: '1 marker',
+        parts: ['1 marker']
     });
 
     t.deepEqual(summary([
