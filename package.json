@@ -1,6 +1,6 @@
 {
   "name": "geojson-summary",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "return a text summary of what is in a geojson object",
   "main": "index.js",
   "scripts": {
