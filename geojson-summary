@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+var summary = require('./'),
+    concat = require('concat-stream'),
+    fs = require('fs'),
+    argv = process.argv.slice(2),
+    simplestyle = !!argv.simplestyle;
+
+if (process.stdin.isTTY && !argv[0]) {
+    process.stdout.write(fs.readFileSync(__dirname + '/HELP.md'));
+    process.exit(1);
+}
+
+(argv.length ? fs.createReadStream(argv[0]) : process.stdin).pipe(concat(convert));
+
+function convert(data) {
+    process.stdout.write(summary(JSON.parse(data)).sentence);
+}

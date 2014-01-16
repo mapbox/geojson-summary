@@ -6,6 +6,9 @@
   "scripts": {
     "test": "node test/geojson-summary.js"
   },
+  "bin": {
+    "geojson-summary": "geojson-summary"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/mapbox/geojson-summary.git"
@@ -26,6 +29,7 @@
     "tap": "~0.4.8"
   },
   "dependencies": {
-    "tape": "~2.3.2"
+    "tape": "~2.3.2",
+    "concat-stream": "~1.4.1"
   }
 }
