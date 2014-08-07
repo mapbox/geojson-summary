@@ -41,6 +41,9 @@ module.exports = function(gj, options) {
         case 1:
             sentence = parts[0];
             break;
+        case 0:
+            sentence = '0 features';
+            break;
     }
 
     return {

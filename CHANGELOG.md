@@ -1,3 +1,7 @@
+## 0.3.0
+
+Add `0 features` sentence output for void.
+
 ## 0.2.0
 
 * Added `geojson-summary` binary

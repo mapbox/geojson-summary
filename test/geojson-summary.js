@@ -3,6 +3,11 @@ var test = require('tape').test,
 
 test('basic geojson', function(t) {
 
+    t.deepEqual(summary([]), {
+        sentence: '0 features',
+        parts: []
+    }, 'empty case');
+
     t.deepEqual(summary([{
         type: 'Feature',
         properties: {},
@@ -14,7 +19,7 @@ test('basic geojson', function(t) {
     }]), {
         sentence: '1 polygon',
         parts: ['1 polygon']
-    });
+    }, '1 polygon');
 
     t.deepEqual(summary([{
         type: 'Feature',
@@ -29,7 +34,7 @@ test('basic geojson', function(t) {
     }), {
         sentence: '1 marker',
         parts: ['1 marker']
-    });
+    }, '1 marker');
 
     t.deepEqual(summary([
         {
@@ -58,7 +63,7 @@ test('basic geojson', function(t) {
     ]), {
         sentence: '1 point and 2 polygons',
         parts: ['1 point', '2 polygons']
-    });
+    }, 'mixed');
 
     t.deepEqual(summary([
         {
