@@ -29,7 +29,8 @@
     "tap": "~0.4.8"
   },
   "dependencies": {
-    "tape": "~2.3.2",
-    "concat-stream": "~1.4.1"
+    "comma-number": "^1.1.0",
+    "concat-stream": "~1.4.1",
+    "tape": "~2.3.2"
   }
 }

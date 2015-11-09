@@ -21,6 +21,31 @@ test('basic geojson', function(t) {
         parts: ['1 polygon']
     }, '1 polygon');
 
+    var oneThousandMarkers = [];
+
+    for (var i = 0; i < 1000; i++) {
+      oneThousandMarkers.push({
+          type: 'Feature',
+          properties: {},
+          geometry: {
+            "type": "Point",
+            "coordinates": [100.0, 0.0]
+          }
+      });
+    }
+
+    t.deepEqual(summary({
+        type: 'FeatureCollection',
+        features: oneThousandMarkers
+    }, {
+        types: {
+            Point: [' marker', ' markers']
+        }
+    }), {
+        sentence: '1,000 markers',
+        parts: ['1,000 markers']
+    }, '1,000 markers');
+
     t.deepEqual(summary([{
         type: 'Feature',
         properties: {},

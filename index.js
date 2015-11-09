@@ -1,3 +1,5 @@
+var comma = require('comma-number');
+
 module.exports = function(gj, options) {
     var features = gj.features || gj;
     options = options || {};
@@ -25,7 +27,7 @@ module.exports = function(gj, options) {
 
     for (var k in counts) {
         if (counts[k]) {
-            parts.push(counts[k] + ((counts[k] > 1) ? types[k][1] : types[k][0]));
+            parts.push(comma(counts[k]) + ((counts[k] > 1) ? types[k][1] : types[k][0]));
         }
     }
 
