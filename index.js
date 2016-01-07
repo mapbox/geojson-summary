@@ -6,14 +6,20 @@ module.exports = function(gj, options) {
 
     var types = options.types || {
         Point: [' point', ' points'],
+        MultiPoint: [' multipoint', ' multipoints'],
         Polygon: [' polygon', ' polygons'],
-        LineString: [' line', ' lines']
+        MultiPolygon: [' multipolygon', ' multipolygons'],
+        LineString: [' line', ' lines'],
+        MultiLineString: [' multiline', ' multilines']
     };
 
     var counts = {
         Point: 0,
+        MultiPoint: 0,
         Polygon: 0,
-        LineString: 0
+        MultiPolygon: 0,
+        LineString: 0,
+        MultiLineString: 0
     };
 
     for (var i = 0; i < features.length; i++) {
@@ -32,20 +38,17 @@ module.exports = function(gj, options) {
     }
 
     var sentence = '';
+    var oxford = parts.length > 2 ? ',' : '';
 
-    switch (parts.length) {
-        case 3:
-            sentence = parts[0] + ', ' + parts[1] + ', and ' + parts[2];
-            break;
-        case 2:
-            sentence = parts[0] + ' and ' + parts[1];
-            break;
-        case 1:
-            sentence = parts[0];
-            break;
-        case 0:
-            sentence = '0 features';
-            break;
+    if (parts.length > 1) {
+        sentence = parts.slice(0, parts.length - 1).join(', ') +
+            oxford +
+            ' and ' +
+            parts[parts.length - 1];
+    } else if (parts.length === 1) {
+        sentence = parts[0];
+    } else {
+        sentence = '0 features';
     }
 
     return {

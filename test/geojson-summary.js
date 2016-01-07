@@ -127,6 +127,15 @@ test('basic geojson', function(t) {
         {
             type: 'Feature',
             properties: {},
+            geometry: { "type": "MultiPolygon",
+              "coordinates": [
+                [[ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0], [100.0, 1.0], [100.0, 0.0] ]
+                ]]
+             }
+        },
+        {
+            type: 'Feature',
+            properties: {},
             geometry: { "type": "Polygon",
               "coordinates": [
                 [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0], [100.0, 1.0], [100.0, 0.0] ]
@@ -136,7 +145,19 @@ test('basic geojson', function(t) {
         {
             type: 'Feature',
             properties: {},
+            geometry: { "type": "MultiPoint", "coordinates": [[100.0, 0.0]] }
+        },
+        {
+            type: 'Feature',
+            properties: {},
             geometry: { "type": "Point", "coordinates": [100.0, 0.0] }
+        },
+        {
+            type: 'Feature',
+            properties: {},
+            geometry: { "type": "MultiLineString",
+              "coordinates": [[ [100.0, 0.0], [101.0, 1.0] ]]
+              }
         },
         {
             type: 'Feature',
@@ -146,8 +167,8 @@ test('basic geojson', function(t) {
               }
         }
     ]), {
-        sentence: '1 point, 2 polygons, and 1 line',
-        parts: ['1 point', '2 polygons', '1 line']
+        sentence: '1 point, 1 multipoint, 2 polygons, 1 multipolygon, 1 line, and 1 multiline',
+        parts: ['1 point', '1 multipoint', '2 polygons', '1 multipolygon', '1 line', '1 multiline']
     });
 
     t.end();
