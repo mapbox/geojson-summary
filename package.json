@@ -4,7 +4,7 @@
   "description": "return a text summary of what is in a geojson object",
   "main": "index.js",
   "scripts": {
-    "test": "node test/geojson-summary.js"
+    "test": "eslint index.js && node test/geojson-summary.js"
   },
   "bin": {
     "geojson-summary": "geojson-summary"
@@ -26,7 +26,9 @@
   },
   "homepage": "https://github.com/mapbox/geojson-summary",
   "devDependencies": {
-    "tape": "~2.3.2"
+    "tape": "~2.3.2",
+    "eslint": "~1.00.0",
+    "eslint-config-unstyled": "^1.1.0"
   },
   "dependencies": {
     "comma-number": "^1.1.0",
