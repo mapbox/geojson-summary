@@ -1,3 +1,11 @@
+## 0.5.0
+
+* Adds GeometryCollection support
+
+## 0.4.0
+
+* Adds Multi-feature support
+
 ## 0.3.0
 
 Add `0 features` sentence output for void.
