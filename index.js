@@ -10,7 +10,8 @@ module.exports = function(gj, options) {
         Polygon: [' polygon', ' polygons'],
         MultiPolygon: [' multipolygon', ' multipolygons'],
         LineString: [' line', ' lines'],
-        MultiLineString: [' multiline', ' multilines']
+        MultiLineString: [' multiline', ' multilines'],
+        GeometryCollection: [' geometry collection', ' geometry collections']
     };
 
     var counts = {
@@ -19,7 +20,8 @@ module.exports = function(gj, options) {
         Polygon: 0,
         MultiPolygon: 0,
         LineString: 0,
-        MultiLineString: 0
+        MultiLineString: 0,
+        GeometryCollection: 0
     };
 
     for (var i = 0; i < features.length; i++) {

@@ -171,5 +171,92 @@ test('basic geojson', function(t) {
         parts: ['1 point', '1 multipoint', '2 polygons', '1 multipolygon', '1 line', '1 multiline']
     });
 
+    t.deepEqual(summary({
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "Point",
+          "coordinates": [0, 0]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "MultiPoint",
+          "coordinates": [[40, -20], [80, 20]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [[40, 20], [80, -20]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[-50, -10], [-40, 10], [-30, -10], [-50, -10]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [[-10, -7.5], [-10, 7.5]],
+            [[10, -7.5], [10, 7.5]],
+            [[-7.5, -10], [7.5, -10]],
+            [[-7.5, 10], [7.5, 10]]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "MultiPolygon",
+          "coordinates": [
+            [[[-50, 60], [-50, 80], [-30, 80], [-30, 60], [-50, 60]]],
+            [[[-20, 60], [-20, 80], [0, 80], [0, 60], [-20, 60]]],
+            [[[10, 60], [10, 80], [30, 80], [30, 60], [10, 60]]]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "GeometryCollection",
+          "geometries": [
+            {
+              "type": "LineString",
+              "coordinates": [[-50, -50], [0, -50]]
+            },
+            {
+              "type": "Point",
+              "coordinates": [40, -50]
+            },
+            {
+              "type": "Polygon",
+              "coordinates": [[[10, -60], [20, -40], [30, -60], [10, -60]]]
+            }
+          ]
+        }
+      }
+    ]
+  }), {
+        sentence: '1 point, 1 multipoint, 1 polygon, 1 multipolygon, 1 line, 1 multiline, and 1 geometry collection',
+        parts: ['1 point', '1 multipoint', '1 polygon', '1 multipolygon', '1 line', '1 multiline', '1 geometry collection']
+    }, 'geometry collection support');
+
     t.end();
 });
