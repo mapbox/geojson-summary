@@ -1,37 +1,37 @@
 {
-  "name": "geojson-summary",
-  "version": "0.5.0",
-  "description": "return a text summary of what is in a geojson object",
-  "main": "index.js",
-  "scripts": {
-    "test": "eslint index.js && node test/geojson-summary.js"
-  },
   "bin": {
     "geojson-summary": "geojson-summary"
-  },
+  }, 
+  "license": "BSD-2-Clause", 
+  "name": "geojson-summary", 
   "repository": {
-    "type": "git",
-    "url": "https://github.com/mapbox/geojson-summary.git"
-  },
-  "keywords": [
-    "geojson",
-    "summary",
-    "text",
-    "description"
-  ],
-  "author": "Tom MacWright",
-  "license": "BSD",
+    "url": "https://github.com/mapbox/geojson-summary.git", 
+    "type": "git"
+  }, 
+  "author": "Tom MacWright", 
   "bugs": {
     "url": "https://github.com/mapbox/geojson-summary/issues"
-  },
-  "homepage": "https://github.com/mapbox/geojson-summary",
-  "devDependencies": {
-    "tape": "~2.3.2",
-    "eslint": "~1.00.0",
-    "eslint-config-unstyled": "^1.1.0"
-  },
+  }, 
+  "version": "0.5.0", 
   "dependencies": {
-    "comma-number": "^1.1.0",
-    "concat-stream": "~1.4.1"
-  }
+    "concat-stream": "~1.4.1", 
+    "comma-number": "^1.1.0"
+  }, 
+  "scripts": {
+    "test": "eslint index.js && node test/geojson-summary.js"
+  }, 
+  "keywords": [
+    "geojson", 
+    "summary", 
+    "text", 
+    "description"
+  ], 
+  "devDependencies": {
+    "tape": "~2.3.2", 
+    "eslint": "~1.00.0", 
+    "eslint-config-unstyled": "^1.1.0"
+  }, 
+  "main": "index.js", 
+  "homepage": "https://github.com/mapbox/geojson-summary", 
+  "description": "return a text summary of what is in a geojson object"
 }
