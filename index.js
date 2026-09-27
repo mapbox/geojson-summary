@@ -1,7 +1,6 @@
 var comma = require('comma-number');
 
 module.exports = function(gj, options) {
-    var features = gj.features || gj;
     options = options || {};
 
     var types = options.types || {
@@ -23,6 +22,19 @@ module.exports = function(gj, options) {
         MultiLineString: 0,
         GeometryCollection: 0
     };
+
+    var features;
+    if (Array.isArray(gj)) {
+        features = gj;
+    } else if (Array.isArray(gj.features)) {
+        features = gj.features;
+    } else if (gj.type === 'Feature') {
+        features = [gj];
+    } else if (typeof counts[gj.type] === 'number') {
+        features = [{geometry: gj}];
+    } else {
+        features = [];
+    }
 
     for (var i = 0; i < features.length; i++) {
         if (features[i].geometry && features[i].geometry.type &&
