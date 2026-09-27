@@ -258,5 +258,22 @@ test('basic geojson', function(t) {
         parts: ['1 point', '1 multipoint', '1 polygon', '1 multipolygon', '1 line', '1 multiline', '1 geometry collection']
     }, 'geometry collection support');
 
+    t.deepEqual(summary({
+        type: 'Feature',
+        properties: {},
+        geometry: {type: 'Point', coordinates: [0, 0]}
+    }), {
+        sentence: '1 point',
+        parts: ['1 point']
+    }, 'a feature on its own');
+
+    t.deepEqual(summary({
+        type: 'Point',
+        coordinates: [0, 0]
+    }), {
+        sentence: '1 point',
+        parts: ['1 point']
+    }, 'a geometry on its own');
+
     t.end();
 });
